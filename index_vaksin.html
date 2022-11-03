@@ -5,7 +5,7 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="col-sm-12">
             <h1 class="m-0">Selamat Datang {{ data_nama[1] }}, di Sistem Pendataan Vaksinasi</h1>
           </div>
         </div><!-- /.row -->
@@ -13,11 +13,12 @@
     </div>
     <!-- /.content-header -->
     <!-- Main content -->
-    <section class="content">
+    <section class="content" style="text-align: center;">
       <div class="container-fluid">
-      </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.container-fluid -->
       <div class="img-fluid">
-        <img src="{{ url_for('static', filename='dist/img/vaccine.png')}}" border="0" style="margin-left: 160px; max-width: 50%; height: auto;">
+        <img src="{{ url_for('static', filename='dist/img/vaccine.png')}}" border="0" style="text-align: center; max-width: 40%; height: auto;">
       <div>
     </section>
     <!-- /.content -->

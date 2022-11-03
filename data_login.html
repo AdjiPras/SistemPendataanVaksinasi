@@ -6,7 +6,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <h1 class="m-0">Data Laporan</h1>
+            <h1 class="m-0">Data Login (Pengguna)</h1>
           </div>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -20,7 +20,7 @@
             <div class="card">
               <div class="card-header">
                 <!-- <h3 class="card-title">Tabel Data</h3><br><br>  -->
-                <a class="btn btn-success btn-sm" href="{{ url_for('insert_laporan') }}" style="float: right;"><i class="fas fa-plus"></i> Tambah</a>
+                <a class="btn btn-success btn-sm" href="#" style="float: right;"><i class="fas fa-plus"></i> Tambah</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
@@ -28,17 +28,19 @@
                   <thead>
                     <tr style="text-align: center; color: aliceblue; background-image: url('https://wallpapercave.com/wp/wp9553544.jpg'); background-size: cover;">
                       <th>No</th>
-                      <th>NIK</th>
+                      <th>NIK/KTP</th>
+                      <th>Username</th>
+                      <th>Password</th>
                       <th>Nama</th>
-                      <th>Laporan</th>
-                      <th>Tanggal Lapor</th>
+                      <th>No. Telp</th>
+                      <th>Email</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     {% set no=namespace(value=1) %}
-                    {% for row in container_laporan %}
+                    {% for row in container_login %}
                     <tr>
                       <td>{{ no.value }}</td>
                       {% set no.value=no.value+1 %}
@@ -47,23 +49,36 @@
                       <td>{{ row[2] }}</td>
                       <td style="text-align: center;">{{ row[3] }}</td>
                       <td style="text-align: center;">{{ row[4] }}</td>
-                      <td style="text-align: center;">
-                        <div class="btn btn-block" style="margin: auto; text-align: center;">
-                          <a href="{{ url_for('update_laporan', ktp = row[0]) }}" class="btn btn-info btn-sm" role="button"><i class="fas fa-pen"></i></a>
-                          <a class="btn btn-danger btn-sm" style="border-radius: 20px;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-trash-alt"></i></a>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="text-align: center; color: aliceblue; background-image: url('https://wallpapercave.com/wp/wp9553544.jpg'); background-size: cover;">
-                            <p style="text-align: center; font-size: 12px;">Yakin Untuk Hapus  ?</p>
-                            <a class="btn btn-danger btn-sm" href="{{ url_for('delete_laporan', ktp = row[0]) }}" style="font-size: 10px; text-align: center;">Lanjut Hapus</a><br>
-                            <a class="btn btn-light btn-sm" href="{{ url_for('laporan') }}" style="font-size: 10px; text-align: center; margin-top: 5px;">Batalkan</a>
-                          </div>
-                        </div>
-                        <!-- {{ row[5] }}<a href="{{ url_for('update_laporan', ktp = row[0]) }}" class="btn btn-info btn-sm" role="button"><i class="fas fa-pen"></i></a>
-                        {{ row[6] }}<a href="{{ url_for('delete_laporan', ktp = row[0]) }}" class="btn btn-danger btn-sm" role="button"><i class="fas fa-trash-alt"></i></a> -->
-                      </td>
+                      <td style="text-align: center;">{{ row[4] }}</td>
+                      <td style="text-align: center;">{{ row[5] }}</td>
+                      <td style="text-align: center;">{{ row[6] }}</td>
+                      <td style="text-align: center;">{{ row[7] }}<a href="#" class="btn btn-info btn-sm" role="button"><i class="fas fa-pen"></i></a>
+                          {{ row[8] }}<a href="#" class="btn btn-danger btn-sm" role="button"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                     {% endfor %}
                   </tbody>
                 </table>
+                <!-- Modal -->
+                <!-- <div class="modal fade" id="editdata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header" style="background-image: url('static/dist/img/bg.jpg');">
+                        <h5 class="modal-title" id="exampleModalLabel">Form Edit Data</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer" style="background-image: url('static/dist/img/bg.jpg');">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
               <!-- /.card-body -->
               
             </div>
